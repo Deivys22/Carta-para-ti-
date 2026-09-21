@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti, mi amor ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff1f4, #f8dfe6);
+    font-family: Georgia, serif;
+    color: #4b2730;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.card {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255,255,255,0.96);
+    border-radius: 28px;
+    padding: 35px 28px;
+    box-shadow: 0 15px 45px rgba(100,40,55,0.18);
+}
+
+.heart {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #a33f58;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.question {
+    text-align: center;
+    color: #a33f58;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 35px;
+}
+
+#carta {
+    display: none;
+}
+
+.login {
+    text-align: center;
+}
+
+.login h2 {
+    color: #a33f58;
+    font-size: 26px;
+}
+
+.pin {
+    width: 180px;
+    padding: 14px;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 8px;
+    border: 1px solid #ddb5c0;
+    border-radius: 15px;
+    outline: none;
+}
+
+button {
+    display: block;
+    margin: 18px auto;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 15px;
+    background: #a33f58;
+    color: white;
+    font-size: 17px;
+}
+
+#error {
+    color: #b3261e;
+    min-height: 25px;
+}
+
+.pequeno {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #80616a;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div id="login" class="login">
+
+    <div class="heart">❤️</div>
+
+    <h2>Hay una carta para ti</h2>
+
+    <p>
+        Un pequeño detalle guardado especialmente para ti.
+    </p>
+
+    <input
+        id="pin"
+        class="pin"
+        type="password"
+        inputmode="numeric"
+        maxlength="4"
+        placeholder="PIN"
+    >
+
+    <button onclick="abrirCarta()">
+        Abrir mi carta ❤️
+    </button>
+
+    <div id="error"></div>
+
+    <div class="pequeno">
+        Introduce el PIN para continuar.
+    </div>
+
+</div>
+
+
+<div id="carta">
+
+    <div class="heart">❤️</div>
+
+    <h1>Para ti, mi amor</h1>
+
+    <p><strong>Mi amor:</strong></p>
+
+    <p>
+    Este detalle es para demostrarte una pequeña parte del gran amor que siento por ti. Espero de corazón que te guste y que, al verlo, puedas sentir aunque sea un poquito de todo lo que llevo dentro.
+    </p>
+
+    <p>
+    Quiero aprovechar este espacio para agradecerte por el amor y el cariño que me das, a pesar de todo lo que hemos vivido. Gracias por ser la gran mujer que eres y por el esfuerzo que haces cada día para hacerme sentir mejor, incluso en medio de esta maldita distancia que a veces se vuelve tan agobiante.
+    </p>
+
+    <p>
+    Aun así, siempre estás ahí, demostrándome tu cariño, tu amor y brindándome ese apoyo que tanto necesito. Me reconforta saber que, a pesar de los kilómetros que nos separan, seguimos encontrando la manera de sentirnos cerca, esperando con ilusión ese gran día en el que pueda volver a tenerte junto a mí.
+    </p>
+
+    <p>
+    Deseo con todo mi corazón que este nuevo comienzo no tenga nunca un final. Que podamos aprender de todo lo que hemos vivido, cuidar lo que tenemos y construir juntos todo aquello que alguna vez soñamos.
+    </p>
+
+    <p>
+    Muchos dicen: «Hasta que la muerte nos separe». Pero yo digo: si existe una vida después de la muerte, también quisiera vivirla contigo.
+    </p>
+
+    <p>
+    Y si algún día me tocara irme primero, le pediría a Diosito que te cuide siempre y, si existe la posibilidad, que algún día te lleve conmigo, porque no quiero imaginar una eternidad sin ti. ❤️
+    </p>
+
+    <p>
+    Te amo, y espero que este pequeño detalle te recuerde siempre lo importante que eres para mí.
+    </p>
+
+    <p>
+    Por todo lo que hemos vivido, por todo lo que siento y por todo lo que aún quiero construir contigo, hoy quiero preguntarte algo desde lo más profundo de mi corazón:
+    </p>
+
+    <p class="question">
+        ¿Quieres ser mi novia? ❤️
+    </p>
+
+</div>
+
+</div>
+
+<script>
+
+function abrirCarta() {
+
+    const pin = document.getElementById("pin").value;
+
+    if (pin === "2004") {
+
+        document.getElementById("login").style.display = "none";
+        document.getElementById("carta").style.display = "block";
+
+    } else {
+
+        document.getElementById("error").textContent =
+        "PIN incorrecto. Inténtalo nuevamente.";
+
+    }
+}
+
+document.getElementById("pin").addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+        abrirCarta();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
